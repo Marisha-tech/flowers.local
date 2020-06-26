@@ -1,11 +1,17 @@
 <? get_header('main');?>
-
+<?
+$about_cat = get_category(3);
+if ($about_cat):?>
+<? $posts = get_posts(array(
+    'numberposts' => 3,
+    'category' => $about_cat->term_id,
+));
+?>
     <section class="section-about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="main-about-text">
-                        <h3>Обо мне</h3>
                         <p class="description">Меня зовут Марина, являюсь любителем цветов с малых лет.
                             Любовь к цветам привила моя любимая бабушка.
                             Ещё в детском возрасте «втыкала» листики всевозможных растений в грунт и наблюдала за развитием будущих растений, получалось довольно-таки не плохо.
