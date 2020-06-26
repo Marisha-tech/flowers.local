@@ -7,6 +7,7 @@
     <?wp_head()?>
 </head>
 <body>
+<button class="scrollToTop"><i class="fas fa-angle-up"></i></button>
 <header class="main-header" <?echo flowers_get_background('header_bg')?>>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="<?echo home_url('/')?>">
