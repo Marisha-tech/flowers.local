@@ -444,6 +444,14 @@ section.about
     list-style-type: none;
     padding-left: 10px;
 }
+section#pages-2
+{
+    padding: 0;
+}
+#pages-2 h2
+{
+    display: none;
+}
 /*==============================copyright==============================*/
 .copyright
 {
