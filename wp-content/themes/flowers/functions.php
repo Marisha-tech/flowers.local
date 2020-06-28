@@ -146,6 +146,17 @@ function flowers_widgets_init() {
             //'after_title'   => '</h2>',
         )
 	);
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Sidebar Widgets', 'flowers' ),
+            'id'            => 'sidebar-widgets',
+            'description'   => esc_html__( 'Add widgets here.', 'flowers' ),
+            'before_widget' => '<div id="%1$s" class="sidebar-widget widget-categories widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
+        )
+    );
 }
 add_action( 'widgets_init', 'flowers_widgets_init' );
 
@@ -251,4 +262,24 @@ function bluerex_reviews(){
         'show_in_rest'        => true, // добавить в REST API. C WP 4.7
     ] );
 }
+//Пагинация
+add_filter('navigation_markup_template', 'flowers_navigation_template', 10, 2);
+function bluerex_navigation_template($template, $class)
+{
+    return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}
+
+//Исключение некоторрых категорий из поста
+function exclude_category_home  ( $query ) {
+    if ( $query->is_home ) {
+        $query->set ( 'category__not_in', array(50,74) );
+    }
+    return $query;
+}
+
+add_filter ( 'pre_get_posts', 'exclude_category_home' );
 
