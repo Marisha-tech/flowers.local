@@ -2,37 +2,32 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 align-self-center ">
-                <ul>
+                <!--<ul>
                     <li>hello@pirolltheme.com </li>
                     <li>+44 987 065 908</li>
-                </ul>
+                </ul>-->
             </div>
             <!-- /.col-md-6 -->
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-4">
-                        <ul>
+                    <div class="col-6">
+                        <!--<ul>
                             <li><a href="#">Главная</a></li>
                             <li><a href="#">Обо мне</a></li>
                             <li><a href="#">Растения</a></li>
                             <li><a href="#">Процесс пересадки</a></li>
-                        </ul>
+                        </ul>-->
+                        <? dynamic_sidebar('sidebar-footer1')?>
                     </div>
-                    <!-- /.col-4 -->
-                    <div class="col-4">
-                        <ul>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.col-4 -->
-                    <div class="col-4">
+                    <!-- /.col-6 -->
+                    <div class="col-6">
                         <ul>
                             <li><a href="#">Facebook</a></li>
                             <li><a href="#">Twitter</a></li>
                             <li><a href="#">Instagram</a></li>
                         </ul>
                     </div>
-                    <!-- /.col-4 -->
+                    <!-- /.col-6 -->
                 </div>
             </div>
             <!-- /.col-md-6 -->
