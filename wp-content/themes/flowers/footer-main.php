@@ -11,12 +11,13 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-4">
-                        <ul>
+                        <!--<ul>
                             <li><a href="#">Главная</a></li>
                             <li><a href="#">Обо мне</a></li>
                             <li><a href="#">Растения</a></li>
                             <li><a href="#">Процесс пересадки</a></li>
-                        </ul>
+                        </ul>-->
+                        <? //dynamic_sidebar('sidebar-footer1')?>
                     </div>
                     <!-- /.col-4 -->
                     <div class="col-4">
