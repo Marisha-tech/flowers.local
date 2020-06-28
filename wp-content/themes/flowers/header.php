@@ -16,14 +16,14 @@
             <?if ($custom_logo):?>
                 <img src="<?echo $custom_logo[0]?>" alt="<?bloginfo('name')?>">
             <?endif?>
-            <?bloginfo('name')?>
+<!--            --><?//bloginfo('name')?>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Главная</a>
@@ -41,6 +41,13 @@
                     <a class="nav-link" href="about.html">Обо мне</a>
                 </li>
             </ul>
+        </div>-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <?wp_nav_menu(array(
+                'theme_location'  => 'header_menu',
+                'container'       => false,
+                'menu_class'      => 'navbar-nav ml-auto',
+            ))?>
         </div>
     </nav>
 </header>
