@@ -112,7 +112,7 @@ class WP_Widget_Categories extends WP_Widget {
 			<?php
 		} else {
 			?>
-		<ul>
+		<ul class="no-padding">
 			<?php
 			$cat_args['title_li'] = '';
 
