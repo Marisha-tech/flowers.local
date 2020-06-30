@@ -1,51 +1,58 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package flowers
- */
+<? get_header();?>
 
-get_header();
-?>
+<section class="section-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <? if (have_posts()) : ?>
+                        <? while (have_posts()) : the_post(); ?>
+                            <div class="col-md-6">
+                                <article class="article-preview">
+                                    <div class="article-excerpt">
+                                        <?if (has_post_thumbnail()): ?>
+                                            <p>
+                                                <a href="<?the_permalink() ?>">
+                                                    <?the_post_thumbnail('medium', array('class'=>'thumb')) ?>
+                                                    <h4><?the_title();?></h4>
+                                                </a>
+                                                <?the_content('')?>
+                                            </p>
+                                        <?endif;?>
+                                        <p><a href="<?the_permalink() ?>" class="more"><?_e('Подробнее', 'flowers')?></a></p>
+                                    </div>
+                                </article>
+                                <!-- /.article-preview -->
+                            </div>
+                        <? endwhile; ?>
+                        <?the_posts_pagination(array(
+                            'end_size'     => 1,
+                            'mid_size'     => 1,
+                            'type'         => 'list',
+                        ))?>
+                    <?endif;?>
+                </div>
 
-	<main id="primary" class="site-main">
+                <!--<nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>-->
+            </div>
+            <?get_sidebar()?>
+        </div>
+    </div>
+</section>
+<!-- /.section-content -->
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+<? get_footer();?>
