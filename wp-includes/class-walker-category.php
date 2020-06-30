@@ -184,7 +184,9 @@ class Walker_Category extends Walker {
 		}
 
 		if ( ! empty( $args['show_count'] ) ) {
-			$link .= ' (' . number_format_i18n( $category->count ) . ')';
+			//$link .= ' (' . number_format_i18n( $category->count ) . ')';
+			$link .= '<span class="cat-count">'." ". $category->count.'</span>';
+
 		}
 		if ( 'list' == $args['style'] ) {
 			$output     .= "\t<li";
