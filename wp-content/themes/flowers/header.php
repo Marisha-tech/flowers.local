@@ -49,5 +49,6 @@
                 'menu_class'      => 'navbar-nav ml-auto',
             ))?>
         </div>
+        <div><?php get_search_form(); ?></div>
     </nav>
 </header>
