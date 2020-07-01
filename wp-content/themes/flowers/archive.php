@@ -4,7 +4,6 @@
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
-                <?php get_search_form(); ?>
                 <h1>Рубрика: <?=single_cat_title()?></h1>
             </div>
         </div>
