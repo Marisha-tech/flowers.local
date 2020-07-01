@@ -12,6 +12,7 @@
                                 <div class="article-excerpt">
                                     <?if (has_post_thumbnail()): ?>
                                         <p>
+
                                             <a href="<?the_permalink() ?>">
                                                 <?the_post_thumbnail('medium', array('class'=>'thumb')) ?>
                                                 <h4><?the_title();?></h4>
