@@ -241,6 +241,15 @@ function flowers_get_background_no_center($field, $cat = null, $cover = true)
     }
     return null;
 }
+function flowers_get_section_icon($field, $cat = null, $cover = true)
+{
+    if (get_field($field, $cat))
+    {
+        $add_style = $cover ? 'background-size: cover' : '';
+        return ' style="background: url('.get_field($field, $cat) . ') no-repeat; '.$add_style . '"';
+    }
+    return null;
+}
 
 add_action( 'init', 'bluerex_reviews' );
 function bluerex_reviews(){
@@ -282,4 +291,5 @@ function exclude_category_home  ( $query ) {
 }
 
 add_filter ( 'pre_get_posts', 'exclude_category_home' );
+
 
