@@ -77,6 +77,11 @@ a:hover
     color: #10c9c3;
     border: 1px solid #10c9c3;
 }
+.content-inside
+{
+    border: 1px solid #e9e9e9;
+    padding: 1.5625rem;
+}
 /*==============================Header==============================*/
 .main-header
 {
@@ -201,11 +206,11 @@ a:hover
     font-weight: 600;
     text-transform: uppercase;
 }
-.main-header-other .navbar-brand
+/*.main-header-other .navbar-brand
 {
     padding-left: 50px;
     font-size: 41px;
-}
+}*/
 .main-header-other ul li a
 {
     font-size: 12px;
@@ -458,7 +463,7 @@ section#pages-2
     font-size: 12px;
 }
 /*==============================flowers.html==============================*/
-.article-excerpt:hover h4 a,
+.article-excerpt:hover a h4,
 .article-excerpt:hover p a
 {
     color: #10c9c3;
@@ -506,7 +511,16 @@ img.category_icon {
     background-color: #e1e1e1;
     padding: 120px 80px;
 }
-
+/*==============================index.php==============================*/
+.widget-categories ul.no-padding
+{
+    padding-left: 0;
+}
+/*==============================archive.php==============================*/
+.post-thumbnail-height
+{
+    height: 175px;
+}
 
 
 
