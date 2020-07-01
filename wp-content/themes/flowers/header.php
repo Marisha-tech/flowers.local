@@ -11,7 +11,7 @@
 
 <header class="main-header-other">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?echo home_url('/')?>">
             <?$custom_logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'));?>
             <?if ($custom_logo):?>
                 <img src="<?echo $custom_logo[0]?>" alt="<?bloginfo('name')?>">
