@@ -1,7 +1,13 @@
 <? get_header();?>
 
 <section class="section-content">
-    <div class="container">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <?php get_search_form(); ?>
+                <h1>Рубрика: <?=single_cat_title()?></h1>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
@@ -12,8 +18,11 @@
                                     <div class="article-excerpt">
                                         <?if (has_post_thumbnail()): ?>
                                             <p>
+
                                                 <a href="<?the_permalink() ?>">
-                                                    <?the_post_thumbnail('medium', array('class'=>'thumb')) ?>
+                                                    <div class="post-thumbnail-height">
+                                                        <?the_post_thumbnail('medium', array('class'=>'thumb', 'style'=>'object-fit: cover; width: 100%; height: 100%;')) ?>
+                                                    </div>
                                                     <h4><?the_title();?></h4>
                                                 </a>
                                                 <?the_content('')?>
