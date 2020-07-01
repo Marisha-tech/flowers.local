@@ -99,6 +99,7 @@ class Walker_Category extends Walker {
 		/** This filter is documented in wp-includes/category-template.php */
 		$cat_name = apply_filters( 'list_cats', esc_attr( $category->name ), $category );
 
+
 		// Don't generate an element if the category name is empty.
 		if ( '' === $cat_name ) {
 			return;
@@ -144,9 +145,12 @@ class Walker_Category extends Walker {
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
-
+        $term = get_queried_object();
+        $section_icon = get_field('section_icon', $category);
 		$link = sprintf(
-			'<a%s>%s</a>',
+			//'<a%s>%s</a>',
+            '<img src="'.$section_icon.'" alt="" class="category_icon"><a%s>%s</a>',
+			//'<img src="'.$section_icon.'" alt="" class="category_icon">'
 			$attributes,
 			$cat_name
 		);
@@ -204,7 +208,12 @@ class Walker_Category extends Walker {
 						'hide_empty' => false,
 					)
 				);
-
+//				/**/
+//                $term = get_queried_object();
+//                $section_icon = get_field('section_icon', $term);
+//                flowers_debug($term);
+//				/**/
+//                $link .= '<img src="'.$section_icon.'" alt="" class="category_icon">';
 				foreach ( $_current_terms as $_current_term ) {
 					if ( $category->term_id == $_current_term->term_id ) {
 						$css_classes[] = 'current-cat';
