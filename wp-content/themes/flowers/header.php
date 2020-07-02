@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<button class="scrollToTop"><i class="fas fa-angle-up"></i></button>
 <header class="main-header-other">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="<?echo home_url('/')?>">
