@@ -277,6 +277,62 @@ a:hover
     color: #10c9c3;
     transform: scale(1);
 }
+.navbar-toggler
+{
+    transition: all .5s;
+    color: #ffffff;
+    background: #3ed2cd;
+
+}
+.navbar-toggler:hover
+{
+    color: #3ed2cd;
+    background: #fff;
+    border-color: #3ed2cd;
+}
+.mobile-position
+{
+    position: relative;
+    left: 70px;
+}
+.logo-mob-position
+{
+    position: absolute;
+    top: 0;
+}
+.bg-light
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.search-mobile
+{
+    display: none;
+}
+.search-desktop
+{
+    display: block;
+}
+/*Menu*/
+#menu-header-menu  .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+}
+
+#menu-header-menu  li:hover>.sub-menu{
+    display: inline;
+    width: 250px;
+    height: auto;
+    padding: 0;
+    z-index: +1;
+    list-style-type: none;
+}
+#menu-header-menu  li:hover>.sub-menu li
+{
+    border-bottom: 1px solid #e9e9e9;
+}
+
 /*==============================section-about==============================*/
 .section-about
 {
@@ -586,10 +642,25 @@ img.category_icon {
     .navbar-nav
     {
         /*background: linear-gradient(45deg, #207cca -1%,#ed1b33 0%,#442e82 100%);*/
-        background: #e9e9e9;
+        /*background: #e9e9e9;*/
         position: relative;
         z-index: 1;
         padding: 0 15px;
+        max-width: 300px;
+        float: left;
+        left: 40px;
+    }
+    .search-mobile
+    {
+        display: block;
+    }
+    .search-desktop
+    {
+        display: none;
+    }
+    #menu-header-menu  li:hover>.sub-menu
+    {
+        display: none;
     }
 }
 
@@ -603,7 +674,7 @@ img.category_icon {
     }
     h4
     {
-        font-size: 20px;
+        font-size: 16px;
     }
     .section-skill .skills,
     .section-skill .other-skills
@@ -620,10 +691,10 @@ img.category_icon {
     }
 }
 @media only screen and (max-width: 600px) {
-    .main-header-text
+    /*.main-header-text
     {
         top: 90px;
-    }
+    }*/
     .main-header-buttons .btn
     {
         display: block;
@@ -648,6 +719,10 @@ img.category_icon {
     {
         font-size: 30px;
     }
+    h4
+    {
+        font-size: 16px;
+    }
 
 }
 
@@ -655,6 +730,10 @@ img.category_icon {
     h2
     {
         font-size: 30px;
+    }
+    h4
+    {
+        font-size: 16px;
     }
     .section-tabs .nav-pills .nav-link
     {
@@ -665,9 +744,18 @@ img.category_icon {
         padding: 8px 16px;
         width: 100%;
     }
-
+    .navbar-toggler
+    {
+        margin-right: 50px;
+    }
+    .search-mobile
+    {
+        margin-left: 35px;
+    }
 
 }
+
+
 @media only screen and (max-width: 380px) {
     h2
     {
@@ -675,12 +763,24 @@ img.category_icon {
     }
     h4
     {
-        font-size: 18px;
+        font-size: 16px;
     }
     /*.main-header .navbar-brand
     {
         font-size: 30px;
     }*/
+    .navbar-toggler
+    {
+        margin-right: 50px;
+    }
+    .search-mobile
+    {
+        margin-left: 0px;
+    }
+    .main-header-text
+    {
+        top: 30%;
+    }
 
 }
 
