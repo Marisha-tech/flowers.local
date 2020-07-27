@@ -11,37 +11,18 @@
 <button class="scrollToTop"><i class="fas fa-angle-up"></i></button>
 <header class="main-header-other">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="<?echo home_url('/')?>">
+        <a class="navbar-brand logo-mob-position" href="<?echo home_url('/')?>">
             <?$custom_logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'));?>
             <?if ($custom_logo):?>
                 <img src="<?echo $custom_logo[0]?>" alt="<?bloginfo('name')?>">
             <?endif?>
 <!--            --><?//bloginfo('name')?>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button class="navbar-toggler mobile-position" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
-
-        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="flowers.html">Комнатные растения</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Пересадка</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Огород на подоконнике</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Обо мне</a>
-                </li>
-            </ul>
-        </div>-->
+        <div class="search-mobile"><?php get_search_form(); ?></div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <?wp_nav_menu(array(
                 'theme_location'  => 'header_menu',
@@ -49,6 +30,6 @@
                 'menu_class'      => 'navbar-nav ml-auto',
             ))?>
         </div>
-        <div><?php get_search_form(); ?></div>
+        <div class="search-desktop"><?php get_search_form(); ?></div>
     </nav>
 </header>
