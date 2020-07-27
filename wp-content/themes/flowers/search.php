@@ -1,53 +1,55 @@
-<?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package flowers
- */
+<?get_header()?>
+<section class="section-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
 
-get_header();
-?>
+                <? if (have_posts()) : ?>
+                    <h2>Результаты поиска: <?the_title()?></h2>
+                    <? while (have_posts()) : the_post(); ?>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="article-excerpt">
+                                <?if (has_post_thumbnail()): ?>
+                                    <div class="bluerex-thumb">
+                                        <a href="<?the_permalink() ?>">
+                                            <?the_post_thumbnail('large', array('class'=>'thumb', 'style' => 'object-fit: cover; width: 100%; height: 100%;')) ?>
+                                        </a>
+                                    </div>
+                                <?endif;?>
 
-	<main id="primary" class="site-main">
+                            </div>
+                        </div>
+                        <!-- /.col-md-4 -->
+                        <div class="col-md-8">
+                            <article class="article-preview">
+                                <div class="article-excerpt">
+                                    <a href="<?the_permalink() ?>"><h4><?the_title()?></h4></a>
+                                <!--                            <p><span class="article-date"><i class="far fa-calendar-alt"></i>--><?//the_time('d.m.Y')?><!--</span></p>-->
+                                <?the_content('')?>
+                                </div>
+                            </article>
 
-		<?php if ( have_posts() ) : ?>
+                        </div>
+                        <!-- /.col-md-8 -->
+                    </div>
+                    <? endwhile; ?>
+                <?endif;?>
+                <?
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) {
+                    comments_template();
+                }
+                ?>
+            </div>
+            <!-- /.col-md-8 -->
+            <?get_sidebar()?>
+        </div>
+        <!-- /.col-md-4 -->
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'flowers' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+    </div>
+    </div>
+</section>
+<!-- /.section-content -->
+<?get_footer()?>
