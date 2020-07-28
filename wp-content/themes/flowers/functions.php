@@ -362,4 +362,10 @@ function flowers_comment( $comment, $args, $depth ) {
         </div>
     <?php }
 }
-
+//Обрезка текста
+function flowers_pruning_text()
+{
+    $content = get_the_content();
+    $content = strip_tags($content);
+    if (strlen ($content)> 20) {echo mb_substr($content, 0, 90).'... '; } else {echo $content; }
+}
