@@ -24,7 +24,8 @@
                                                     </div>
                                                     <h4><?the_title();?></h4>
                                                 </a>
-                                                <?the_content('')?>
+                                                <? flowers_pruning_text(); ?>
+                                                <?//the_content('')?>
                                             </p>
                                         <?endif;?>
                                         <p><a href="<?the_permalink() ?>" class="more"><?_e('Подробнее', 'flowers')?></a></p>
