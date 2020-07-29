@@ -10,13 +10,13 @@
                             <h2><?the_title()?></h2>
 <!--                            <p><span class="article-date"><i class="far fa-calendar-alt"></i>--><?//the_time('d.m.Y')?><!--</span></p>-->
                             <div class="article-excerpt">
-                                <?if (has_post_thumbnail()): ?>
-                                    <div class="bluerex-thumb">
-                                        <a href="<?the_permalink() ?>">
-                                            <?the_post_thumbnail('large', array('class'=>'thumb', 'style' => 'object-fit: cover; width: 100%; height: 100%;')) ?>
+                                <?/*if (has_post_thumbnail()): */?><!--
+                                    <div class="flowers-thumb">
+                                        <a href="<?/*the_permalink() */?>">
+                                            <?/*the_post_thumbnail('large', array('class'=>'thumb', 'style' => 'object-fit: cover; width: 100%; height: 100%;')) */?>
                                         </a>
                                     </div>
-                                <?endif;?>
+                                --><?/*endif;*/?>
                                 <?the_content('')?>
                             </div>
                         </article>
