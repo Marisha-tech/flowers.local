@@ -273,7 +273,7 @@ function bluerex_reviews(){
 }
 //Пагинация
 add_filter('navigation_markup_template', 'flowers_navigation_template', 10, 2);
-function bluerex_navigation_template($template, $class)
+function flowers_navigation_template($template, $class)
 {
     return '
 	<nav class="navigation %1$s" role="navigation">
