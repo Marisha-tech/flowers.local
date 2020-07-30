@@ -17,7 +17,6 @@
                                     <div class="article-excerpt">
                                         <?if (has_post_thumbnail()): ?>
                                             <p>
-
                                                 <a href="<?the_permalink() ?>">
                                                     <div class="post-thumbnail-height">
                                                         <?the_post_thumbnail('medium', array('class'=>'thumb', 'style'=>'object-fit: cover; width: 100%; height: 100%;')) ?>
@@ -27,6 +26,18 @@
                                                 <? flowers_pruning_text(); ?>
                                                 <?//the_content('')?>
                                             </p>
+                                        <?else:?>
+
+                                                <a href="<?the_permalink() ?>">
+                                                    <div class="post-thumbnail-height">
+<!--                                                        --><?//the_post_thumbnail('medium', array('class'=>'thumb', 'style'=>'object-fit: cover; width: 100%; height: 100%;')) ?>
+                                                        <img src="<?=get_template_directory_uri().'/assets/img/no_photo.png'?>" alt="">
+                                                    </div>
+                                                    <h4><?the_title();?></h4>
+                                                </a>
+                                                <? flowers_pruning_text(); ?>
+                                                <?//the_content('')?>
+
                                         <?endif;?>
                                         <p><a href="<?the_permalink() ?>" class="more"><?_e('Подробнее', 'flowers')?></a></p>
                                     </div>
