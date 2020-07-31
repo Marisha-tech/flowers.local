@@ -8,7 +8,7 @@
     ));
         //flowers_debug($about_cat);
     ?>
-    <section class="section-about">
+    <section class="section-about wow fadeInUp" data-wow-duration="2s" data-wow-offset="10">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -40,22 +40,28 @@
             <div class="row">
                 <div class="col-md-6 skills">
                     <h3 class="text-left"><?= $skills_cat->name ?></h3>
-                    <h4>Развитие цветка из листика    75%</h4>
-                    <div class="progress progress-height progress-bottom">
-                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    <h4>Огород на подоконнике    95%</h4>
+                    <div class="progress progress-height progress-bottom wow slideInLeft">
+                        <div class="progress-bar" id="line-container" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <h4>Уход за горшечными    90%</h4>
-                    <div class="progress progress-height progress-bottom">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <h4>Размножение растений    75%</h4>
+                    <div class="progress progress-height progress-bottom wow slideInLeft">
+                        <div class="progress-bar" id="line-container" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <h4>Размножение растений    65%</h4>
+                    <!--<h4>Развитие цветка из листика    75%</h4>
                     <div class="progress progress-height progress-bottom">
-                        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar" id="line-container" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>-->
+                    <h4>Уход за горшечными    98%</h4>
+                    <div class="progress progress-height progress-bottom wow slideInLeft">
+                        <div class="progress-bar" id="line-container" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+
+
                 </div>
                 <!-- /.col-md-6 -->
                 <div class="col-md-6 other-skills" <? echo flowers_get_background_no_center('section_img', $skills_cat) ?>>
-                    <p><?= $skills_cat->description ?></p>
+                    <p class="wow fadeInUp"><?= $skills_cat->description ?></p>
                 </div>
                 <!-- /.col-md-6 -->
             </div>
@@ -65,7 +71,7 @@
 <?endif;?>
     <section class="section-hours">
         <div class="container">
-            <div class="row">
+            <div class="row wow rotateInDownLeft">
                 <div class="col-3 col-sm-3 col-md-3">
                     <div class="row">
                         <div class="col-6 col-sm-6 col-md-4">
