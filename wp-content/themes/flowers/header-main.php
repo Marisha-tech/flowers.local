@@ -33,7 +33,7 @@
         </div>
         <div class="search-desktop"><?php get_search_form(); ?></div>
     </nav>
-    <div class="main-header-text">
+    <div class="main-header-text animate__animated animate__backInLeft"><!--animate__animated animate__bounce-->
         <?if(get_field('header1')):?>
             <h2><?the_field('header1')?></h2>
         <?endif?>
