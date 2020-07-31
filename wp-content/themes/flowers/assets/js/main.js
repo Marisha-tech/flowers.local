@@ -1,5 +1,6 @@
 /*Для галереи*/
-$(function () {
+jQuery(function($){
+    $(document).ready(function () {
     // baguetteBox.run('.gallery');
     baguetteBox.run('.wp-block-gallery');/*Для галереи*/
 
@@ -25,6 +26,7 @@ $(function () {
         $('html, body').animate({scrollTop : 0},800);
         return false;
     });
+});
 });
 /*Привязка картинки кнопки к youtube*/
 function onYouTubeIframeAPIReady() {
@@ -64,3 +66,6 @@ var tag = document.createElement('script');
 tag.src = "//www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+//Анимация animate.min.css wow.min.js
+new WOW().init();
