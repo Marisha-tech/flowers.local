@@ -119,6 +119,41 @@ a:hover
     list-style: none;
     padding-left: 0;
 }
+figcaption
+{
+    text-align: center;
+    font-size: 12px;
+}
+ul.page-numbers {
+    list-style: none;
+    display: flex;
+}
+ul.page-numbers span.current {
+    background-color: #0ABAB5;
+    border-color: #0ABAB5;
+    color: #ffffff;
+}
+ul.page-numbers a.page-numbers, ul.page-numbers span {
+    color: #10c9c3;
+    transition: all .5s;
+    padding: .5rem 1rem;
+    position: relative;
+    display: block;
+    margin-left: -1px;
+    line-height: 1.25;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    /*border-top-color: rgb(222, 226, 230);*/
+    /*border-right-color: rgb(222, 226, 230);*/
+    /*border-bottom-color: rgb(222, 226, 230);*/
+    /*border-left-color: rgb(222, 226, 230);*/
+}
+ul.page-numbers a.page-numbers:hover {
+    background-color: #10c9c3;
+    color: #ffffff;
+    border-color: #10c9c3;
+    text-decoration: none;
+}
 /*==============================Header==============================*/
 .main-header
 {
@@ -624,7 +659,60 @@ img.category_icon {
 {
     height: 175px;
 }
-
+/*==============================single.php==============================*/
+ul.review-pros-section, ul.review-cons-section
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.review-pros-section li:before {
+    width: 25px!important;
+    content: "\f00c"!important;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none!important;
+    /*left: 0;*/
+    /*top: 6px;*/
+    color: #1ec64c;
+    padding-right: 10px;
+}
+.review-cons-section li:before {
+    width: 25px!important;
+    content: "\f00d"!important;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none!important;
+    /*left: 0;*/
+    /*top: 6px;*/
+    color: #e50000;
+    padding-right: 10px;
+}
+p.alert {
+    background-color: #f9ddd5;
+    /*margin-left: -20px;*/
+    /*padding: 0 20px 10px 20px;*/
+    padding: 20px;
+    margin: 5px 0px 20px 0px;
+    clear: both;
+    border-radius: 4px !important;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+p.info {
+    background-color: #d2f9d8;
+    /*margin-left: -20px;*/
+    padding: 20px;
+    margin: 5px 0px 20px 0px;
+    clear: both;
+    border-radius: 4px !important;
+    border: 1px solid rgba(0,0,0,0.08);
+}
 
 
 /*Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
