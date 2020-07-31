@@ -38,7 +38,7 @@ if ( ! function_exists( 'flowers_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+//		add_theme_support( 'title-tag' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -168,6 +168,7 @@ function flowers_scripts() {
     wp_enqueue_style( 'flowers-bootstrap-css', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css', array(), _S_VERSION );
     wp_enqueue_style( 'flowers-googlefonts-css', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nunito+Sans&display=swap', array(), _S_VERSION );
     wp_enqueue_style( 'flowers-baguetteBox-css', get_template_directory_uri().'/assets/css/baguetteBox.min.css', array(), _S_VERSION );
+    wp_enqueue_style( 'flowers-animate-plugin-css', get_template_directory_uri().'/assets/animate-plugin/animate.min.css', array(), _S_VERSION );
     wp_enqueue_style( 'flowers-style-css', get_template_directory_uri().'/assets/css/style.css', array(), _S_VERSION );
 
     //wp_style_add_data( 'flowers-style', 'rtl', 'replace' );
@@ -179,7 +180,10 @@ function flowers_scripts() {
     wp_enqueue_script( 'flowers-popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '', true );
     wp_enqueue_script( 'flowers-bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array(), '', true );
     wp_enqueue_script( 'flowers-baguetteBox-js', get_template_directory_uri() . '/assets/js/baguetteBox.min.js', array(), '', true );
+    wp_enqueue_script( 'flowers-animate-plugin-js', get_template_directory_uri() . '/assets/animate-plugin/wow.min.js', array(), '', true );
+//    wp_enqueue_script( 'flowers-progressbar-js', get_template_directory_uri() . '/assets/js/progressbar.js', array(), '', true );
     wp_enqueue_script( 'flowers-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '', true );
+
     wp_enqueue_script( 'flowers-fontawesome-js', 'https://kit.fontawesome.com/7b292b2c1c.js', array(), '', true );
 
     //wp_enqueue_script( 'flowers-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -189,6 +193,17 @@ function flowers_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'flowers_scripts' );
+
+//Анимация animate.min.css wow.min.js
+function flowers_wow_init_in_footer() {
+    add_action( 'print_footer_scripts', 'wow_init' );
+}
+function wow_init() {?>
+    <script type='text/javascript'>
+        new WOW().init();
+        mobile: false,
+    </script>
+<?php }
 
 /**
  * Implement the Custom Header feature.
@@ -369,3 +384,11 @@ function flowers_pruning_text()
     $content = strip_tags($content);
     if (strlen ($content)> 20) {echo mb_substr($content, 0, 90).'... '; } else {echo $content; }
 }
+function flowers_pruning_text_search()
+{
+    $content = get_the_content();
+    $content = strip_tags($content);
+    if (strlen ($content)> 20) {echo mb_substr($content, 0, 150).'... '; } else {echo $content; }
+}
+// Убираем тег <p></p> из description в мета тегах
+remove_filter('term_description', 'wpautop');
