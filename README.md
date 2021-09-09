@@ -1,5 +1,16 @@
-#flowers.local
+## Блог о цветоводстве
 
-Верстка на основании макета
+## Внедрение верстки на CMS WP
 
-Внедрение верстки на CMS WP. Блог о цветоводстве
+Верстка сайта для портфолио на основании макета
+
+Проект необходим для освоения и закрепления материала по верстке
+
+### Languages and Tools
+![HTML](https://img.shields.io/badge/-HTML5-090909?style=for-the-badge&logo=HTML5)
+![CSS](https://img.shields.io/badge/-CSS-090909?style=for-the-badge&logo=CSS3)
+![JavaScript](https://img.shields.io/badge/-JS-090909?style=for-the-badge&logo=JavaScript)
+![Wordpress](https://img.shields.io/badge/-WP-090909?style=for-the-badge&logo=Wordpress)
+![GIT](https://img.shields.io/badge/-GIT-090909?style=for-the-badge&logo=GIT)
+![GULP](https://img.shields.io/badge/-GULP-090909?style=for-the-badge&logo=GULP)
+![SASS](https://img.shields.io/badge/-SASS-090909?style=for-the-badge&logo=SASS)
