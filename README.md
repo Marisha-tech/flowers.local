@@ -1,4 +1,4 @@
-## Блог о цветоводстве <iframe src="https://giphy.com/embed/xT8qBhgUqOOWII72Pm" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rose-romance-romantic-xT8qBhgUqOOWII72Pm">via GIPHY</a></p>
+## Блог о цветоводстве <img src="https://giphy.com/embed/xT8qBhgUqOOWII72Pm" width="480" height="480"></img>
 
 ## Внедрение верстки на CMS WP
 
